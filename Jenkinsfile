@@ -73,6 +73,9 @@ pipeline {
                    . ~/.nvm/nvm.sh
                     nvm install 4.4.5    
                   '''
+             }
+          }
+     }
      stage('Push image in staging and deploy it') {
        when {
               expression { GIT_BRANCH == 'origin/master' }
