@@ -64,7 +64,15 @@ pipeline {
              }
           }
       }    
-          
+     stage ('Install Nodejs') {
+          agent any
+          steps {
+             script {
+               sh '''
+                  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | bash
+                   . ~/.nvm/nvm.sh
+                    nvm install 4.4.5    
+                  '''
      stage('Push image in staging and deploy it') {
        when {
               expression { GIT_BRANCH == 'origin/master' }
