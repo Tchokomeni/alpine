@@ -64,16 +64,6 @@ pipeline {
              }
           }
       }    
-     stage (' Instal npm ') {
-          agent any
-          steps {
-             script {
-               sh '''
-                 apt install nodejs 
-               '''
-             }
-          }
-     }
           
      stage('Push image in staging and deploy it') {
        when {
