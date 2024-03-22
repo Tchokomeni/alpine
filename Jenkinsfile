@@ -64,7 +64,17 @@ pipeline {
              }
           }
       }    
-     
+     stage (' Instal npm ') {
+          agent any
+          steps {
+             script {
+               sh '''
+                 nmp install 
+               '''
+             }
+          }
+     }
+          
      stage('Push image in staging and deploy it') {
        when {
               expression { GIT_BRANCH == 'origin/master' }
