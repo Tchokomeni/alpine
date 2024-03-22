@@ -69,7 +69,7 @@ pipeline {
           steps {
              script {
                sh '''
-                 nmp install 
+                 apt install nodejs 
                '''
              }
           }
