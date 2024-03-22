@@ -2,7 +2,6 @@ pipeline {
      environment {
        IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
-//       PORT_EXPOSED = "80" à paraméter dans le job
        STAGING = "monapp-staging"
        PRODUCTION = "monapp-production"
      }
